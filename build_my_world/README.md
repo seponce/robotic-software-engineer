@@ -57,6 +57,22 @@ make # You might get errors if your system is not up to date!
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/Users/seponce/Desktop/gazebo/project/build
 ```
 
+##### Open your world file and attach the plugin to it
+```sh
+cd /Users/seponce/Desktop/gazebo/project/world/
+vi myworld.world
+```
+
+####### Copy this code
+```xml
+<plugin name="hello" filename="libhello.so"/>
+```
+
+####### and paste it under
+```xml
+<world name="default">
+```
+
 ##### Launch the world file in Gazebo to load both the world and the plugin
 ```sh
 cd /Users/seponce/Desktop/gazebo/project/world/

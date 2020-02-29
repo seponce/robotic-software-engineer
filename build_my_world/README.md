@@ -63,12 +63,12 @@ cd /Users/seponce/Desktop/gazebo/project/world/
 vi myworld.world
 ```
 
-####### Copy this code
+###### Copy this code
 ```xml
 <plugin name="hello" filename="libhello.so"/>
 ```
 
-####### and paste it under
+###### and paste it under
 ```xml
 <world name="default">
 ```

@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/workspace/robotic-software-engineer/chase_it/catkin_ws/install/setup.sh
+    local-name: /home/workspace/catkin_ws/install/setup.sh

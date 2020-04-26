@@ -8,7 +8,6 @@ ros::ServiceClient client;
 // This function calls the command_robot service to drive the robot in the specified direction
 void drive_robot(float lin_x, float ang_z)
 {
-    // TODO: Request a service and pass the velocities to it to drive the robot
     ROS_INFO_STREAM("Drive robot to white ball");
 
     ball_chaser::DriveToTarget srv;
@@ -31,49 +30,40 @@ void process_image_callback(const sensor_msgs::Image img)
     int white_pixel = 255;
 
     // Loop through each pixel in the image and check if its equal to the first one
-    int size_image = img.height * img.step;
-    float left = (float)size_image / 3;
-    float mid = (float)size_image / 2;
-    float right = (float)size_image;
-
-    float lon_x = 0.0;
-    float ang_z = 0.0;
-
-    for (int i = 0; i < size_image; i++) {
-
-        if (img.data[i] == white_pixel) {
-            ROS_INFO_STREAM("white identified!");
+    float part = (float)img.step / 3;
+    int section = 0;
+    int left = 0;
+    int mid = 0;
+    int right = 0;
+  
+    for (int i=0; i < img.height * img.step; i+=3){
+	if (img.data[i] == white_pixel && img.data[i+1] == white_pixel && img.data[i+2] == white_pixel){
+	    section = i % img.step;
 
             // Depending on the white ball position, call the drive_bot function and pass velocities to it
             // mid / forward
-     	    if (i > left && i < right){
-	       ROS_INFO_STREAM("forward to ball");
-               lon_x = 0.5;
-               ang_z = 0.0;
-	       break;
-	    }
-	    // left
-            else if (i <= left){
-               ROS_INFO_STREAM("left to ball");
-	       lon_x = 0.0;
-               ang_z = 0.5;	       
- 	       break;
+            if (section >= part && section < (2*part)){
+               mid++;
+            }
+            // left
+            else if (section < part){
+               left++;
             }
             // right
-            else if (i >= right){
-               ROS_INFO_STREAM("right to ball");
-               lon_x = 0.0;
-	       ang_z = -0.5;	       
-	       break;
+            else if (section >= (2*part)){
+               right++;
             }
-        }
+	}
     }
 
-    if (lon_x == 0.0 && ang_z == 0.0){
-      ROS_INFO_STREAM("stop robot");
-      drive_robot(lon_x, ang_z);
+    if (left > mid && left > right){
+       drive_robot(0.2, 0.5);
+    }else if (mid > left && mid > right){
+       drive_robot(0.2, 0.0);
+    }else if (right > left && right > mid){
+       drive_robot(0.2, -0.5);
     }else{
-      drive_robot(lon_x, ang_z);
+      drive_robot(0.0, 0.0);
     }
 }
 

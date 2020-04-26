@@ -41,6 +41,7 @@
 /home/workspace/catkin_ws/build/ball_chaser/CMakeFiles/edit_cache.dir
 /home/workspace/catkin_ws/build/ball_chaser/CMakeFiles/install/local.dir
 /home/workspace/catkin_ws/build/ball_chaser/CMakeFiles/install/strip.dir
+/home/workspace/catkin_ws/build/ball_chaser/CMakeFiles/drive_bot.dir
 /home/workspace/catkin_ws/build/ball_chaser/CMakeFiles/ball_chaser_gennodejs.dir
 /home/workspace/catkin_ws/build/ball_chaser/CMakeFiles/install.dir
 /home/workspace/catkin_ws/build/ball_chaser/CMakeFiles/ball_chaser_genlisp.dir

@@ -1,4 +1,4 @@
-prefix=/home/workspace/robotic-software-engineer/chase_it/catkin_ws/install
+prefix=/home/workspace/catkin_ws/install
 
 Name: ball_chaser
 Description: Description of ball_chaser

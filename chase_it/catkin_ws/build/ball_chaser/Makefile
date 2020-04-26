@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+ball_chaser/CMakeFiles/drive_bot.dir/rule:
+	cd /home/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ball_chaser/CMakeFiles/drive_bot.dir/rule
+.PHONY : ball_chaser/CMakeFiles/drive_bot.dir/rule
+
+# Convenience name for target.
+drive_bot: ball_chaser/CMakeFiles/drive_bot.dir/rule
+
+.PHONY : drive_bot
+
+# fast build rule for target.
+drive_bot/fast:
+	cd /home/workspace/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/drive_bot.dir/build.make ball_chaser/CMakeFiles/drive_bot.dir/build
+.PHONY : drive_bot/fast
+
+# Convenience name for target.
 ball_chaser/CMakeFiles/ball_chaser_gennodejs.dir/rule:
 	cd /home/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ball_chaser/CMakeFiles/ball_chaser_gennodejs.dir/rule
 .PHONY : ball_chaser/CMakeFiles/ball_chaser_gennodejs.dir/rule
@@ -660,6 +675,33 @@ geometry_msgs_generate_messages_py/fast:
 	cd /home/workspace/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make ball_chaser/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
 
+src/drive_bot.o: src/drive_bot.cpp.o
+
+.PHONY : src/drive_bot.o
+
+# target to build an object file
+src/drive_bot.cpp.o:
+	cd /home/workspace/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/drive_bot.dir/build.make ball_chaser/CMakeFiles/drive_bot.dir/src/drive_bot.cpp.o
+.PHONY : src/drive_bot.cpp.o
+
+src/drive_bot.i: src/drive_bot.cpp.i
+
+.PHONY : src/drive_bot.i
+
+# target to preprocess a source file
+src/drive_bot.cpp.i:
+	cd /home/workspace/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/drive_bot.dir/build.make ball_chaser/CMakeFiles/drive_bot.dir/src/drive_bot.cpp.i
+.PHONY : src/drive_bot.cpp.i
+
+src/drive_bot.s: src/drive_bot.cpp.s
+
+.PHONY : src/drive_bot.s
+
+# target to generate assembly for a file
+src/drive_bot.cpp.s:
+	cd /home/workspace/catkin_ws/build && $(MAKE) -f ball_chaser/CMakeFiles/drive_bot.dir/build.make ball_chaser/CMakeFiles/drive_bot.dir/src/drive_bot.cpp.s
+.PHONY : src/drive_bot.cpp.s
+
 src/process_image.o: src/process_image.cpp.o
 
 .PHONY : src/process_image.o
@@ -698,6 +740,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... drive_bot"
 	@echo "... ball_chaser_gennodejs"
 	@echo "... install"
 	@echo "... ball_chaser_genlisp"
@@ -733,6 +776,9 @@ help:
 	@echo "... _ball_chaser_generate_messages_check_deps_DriveToTarget"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... src/drive_bot.o"
+	@echo "... src/drive_bot.i"
+	@echo "... src/drive_bot.s"
 	@echo "... src/process_image.o"
 	@echo "... src/process_image.i"
 	@echo "... src/process_image.s"

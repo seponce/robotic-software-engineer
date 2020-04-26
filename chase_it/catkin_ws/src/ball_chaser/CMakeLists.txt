@@ -122,11 +122,11 @@ include_directories(
 
 add_executable(drive_bot src/drive_bot.cpp)
 target_link_libraries(drive_bot ${catkin_LIBRARIES})
-add_dependencies(drive_bot simple_bot_generate_messages_cpp)
+add_dependencies(drive_bot drive_bot)
 
 add_executable(process_image src/process_image.cpp)
 target_link_libraries(process_image ${catkin_LIBRARIES})
-add_dependencies(process_image simple_bot_generate_message_cpp)
+add_dependencies(process_image process_image)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}

@@ -1,4 +1,4 @@
-prefix=/home/workspace/catkin_ws/install
+prefix=/home/workspace/robotic-software-engineer/chase_it/catkin_ws/install
 
 Name: my_robot
 Description: Description of my_robot

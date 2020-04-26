@@ -120,9 +120,9 @@ include_directories(
  include ${catkin_INCLUDE_DIRS}
 )
 
-#add_executable(drive_bot src/drive_bot.cpp process_image src/process_image.cpp)
-#target_link_libraries(drive_bot process_image ${catkin_LIBRARIES})
-#add_dependencies(drive_bot process_image simple_bot_generate_messages_cpp)
+add_executable(drive_bot src/drive_bot.cpp)
+target_link_libraries(drive_bot ${catkin_LIBRARIES})
+add_dependencies(drive_bot simple_bot_generate_messages_cpp)
 
 add_executable(process_image src/process_image.cpp)
 target_link_libraries(process_image ${catkin_LIBRARIES})
